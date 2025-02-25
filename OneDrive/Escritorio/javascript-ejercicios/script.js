@@ -183,9 +183,98 @@ console.log("Suma: " + calculadora(numero1, numero2, 'suma'));
 console.log("Resta: " + calculadora(numero1, numero2, 'resta'));
 console.log("Multiplicación: " + calculadora(numero1, numero2, 'multiplicacion'));
 console.log("División: " + calculadora(numero1, numero2, 'division'));
+  
+//estructuras de controls
+
+//declarar dos variables una que sea nombre y la otra la edad y  mostrar si es mayor de edad o no
+
+/*
+el usuario digite nombre y edad con la siguiente de verificacion
+1 a 18 años es joven
+19 a 40 años es adulto
+41 a 60 años es maduro
+61 en adelante es anciano
+
+
+let nombre = prompt ("ingrese su nombre");
+let edad = parseInt(prompt("ingrese su edad"));
+
+if (edad <= 18) {
+
+    alert("hola: " + nombre + " eres una persona joven");
+} else if (edad <=40){
+
+    alert("hola: " + nombre + " eres una persona adulta");
+} else if (edad <=60){
+
+  alert("hola: " + nombre + " eres una persona madura");
+}else{
+    alert("hola: " + nombre + " eres una persona anciana");
+}
+
+*/
+
+//ciclo while
+
+/*declarar una variable numerica que nuestre la cuenta regresiva a llegar a 0
 
 
 
+let cuentaAtras = 5
+while (cuentaAtras > 0) {
+  document.write(cuentaAtras+'<br>')
+  cuentaAtras --
+}
+
+console.write('¡Despegue! 🚀') 
+ 
+//DO WHILE
+
+/* imprimir 5 edades de diferentes personas y determiar si son mayores de edad
+
+let persona = 0
+
+do{
+    let nombre = (prompt("ingrese su nombre"));
+    let edad = (parseInt("ingrese su nombre"));
+    if(edad>=18){
+        alert(nombre + "eres amyor de edad " );
+    }else{
+        alert(nombre + "eres amyor de edad " );
+    }
+    persona++;
+
+}while(persona<5)
+
+    alert ("se registraron" + persona + "personas");
+    alert ("fin del programa");
+    
+
+    //for
+
+    /*imprimir las tablas de multiplicar del numero que el usuario ingrese hasta el numero 10,
+    utilizando el ciclo for mostrar en pantalla la siguiente sintaxis
+
+    5x1=5
+    5x2=10
+    5x3=15
+    5x4=20
+    5x5=25
+    5x6=30
+    5x7=35
+    5x8=40
+    5x9=45
+    5x10=50
+    */
+
+let numero = parseInt(prompt("Ingrese un número para ver su tabla de multiplicar:"));
+
+  for (let i = 1; i <= 10; i++) {
+    let resultado = numero * i;
+    document.write (numero + "x" + i + "=" + resultado + "<br>");
+  }
+       
+    
 
 
 
