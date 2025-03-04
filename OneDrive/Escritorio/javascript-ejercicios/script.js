@@ -359,7 +359,7 @@ if (!isNaN(edad)) {
 //ejercicio numero 3//
 /*Dado dos números A y B, determinar si A es mayor, menor o igual que B*/
 
-function compararNumeros(a, b) {
+const compararNumeros = (a, b) => {
     if (a > b) {
         return "A es mayor que B.";
     } else if (a < b) {
@@ -367,7 +367,7 @@ function compararNumeros(a, b) {
     } else {
         return "A es igual a B.";
     }
-}
+};
 
 let a = parseFloat(prompt("Ingrese el primer número (A):"));
 let b = parseFloat(prompt("Ingrese el segundo número (B):"));
@@ -386,7 +386,7 @@ b) Si el peso es entre 41 y 70 Kg. Muestre el mensaje: Persona peso
 promedio;
 c) Si el peso es mayor a 71 Kg. Muestre el mensaje: “Persona con sobrepeso”*/
 
-function clasificarPeso(peso) {
+const clasificarPeso = (peso) => {
     if (peso <= 40) {
         return "Persona Baja de Peso";
     } else if (peso >= 41 && peso <= 70) {
@@ -394,7 +394,8 @@ function clasificarPeso(peso) {
     } else {
         return "Persona con sobrepeso";
     }
-}
+};
+
 let peso = parseFloat(prompt("Ingrese su peso en Kg:"));
 
 if (!isNaN(peso)) {
@@ -403,10 +404,172 @@ if (!isNaN(peso)) {
     alert("Por favor, ingresa un peso válido.");
 }
 
+
 //ejercicio numero 7//
 /*En un almacén se hace un 20% de descuento a los clientes cuya compra
 supere los $1000, a los demás solo se les hace un 5% de descuento ¿ Cuál
 será la cantidad que pagara una persona por su compra?*/
+
+const calcularDescuento = (monto) => {
+    let descuento = monto > 1000 ? 0.20 : 0.05;
+    let totalPagar = monto - (monto * descuento);
+    return `Total a pagar: $${totalPagar.toFixed(2)}`;
+};
+
+let monto = parseFloat(prompt("Ingrese el monto de su compra:"));
+
+if (!isNaN(monto) && monto > 0) {
+    alert(calcularDescuento(monto));
+} else {
+    alert("Por favor, ingresa un monto válido.");
+}
+
+
+//ejercicio numero 9//
+/*Programa que lea los nombres y edades de dos personas e imprima cuál de
+ellas tiene más edad.*/
+
+const compararEdades = (nombre1, edad1, nombre2, edad2) => {
+    if (edad1 > edad2) {
+        return `${nombre1} es mayor que ${nombre2}.`;
+    } else if (edad1 < edad2) {
+        return `${nombre2} es mayor que ${nombre1}.`;
+    } else {
+        return `${nombre1} y ${nombre2} tienen la misma edad.`;
+    }
+};
+
+let nombre1 = prompt("Ingrese el nombre de la primera persona:");
+let edad1 = parseInt(prompt("Ingrese la edad de la primera persona:"));
+let nombre2 = prompt("Ingrese el nombre de la segunda persona:");
+let edad2 = parseInt(prompt("Ingrese la edad de la segunda persona:"));
+
+if (!isNaN(edad1) && !isNaN(edad2) && edad1 > 0 && edad2 > 0) {
+    alert(compararEdades(nombre1, edad1, nombre2, edad2));
+} else {
+    alert("Por favor, ingrese edades válidas.");
+}
+
+
+//ejercicio 11//
+/*Leer 2 números; si son iguales que los multiplique, si el primero es mayor
+que el segundo que los reste y si no que los sume.*/
+
+const operarNumeros = (num1, num2) => {
+    if (num1 === num2) {
+        return `Los números son iguales, su multiplicación es: ${num1 * num2}`;
+    } else if (num1 > num2) {
+        return `El primer número es mayor, la resta es: ${num1 - num2}`;
+    } else {
+        return `El segundo número es mayor, la suma es: ${num1 + num2}`;
+    }
+};
+
+let num1 = parseFloat(prompt("Ingrese el primer número:"));
+let num2 = parseFloat(prompt("Ingrese el segundo número:"));
+
+if (!isNaN(num1) && !isNaN(num2)) {
+    alert(operarNumeros(num1, num2));
+} else {
+    alert("Por favor, ingrese números válidos.");
+}
+
+//ejercico 13//
+
+/*13.Escribe un programa que determine si un número ingresado por el usuario
+es par o impar.*/
+
+const verificarParidad = (num) => {
+    if (num % 2 === 0) {
+        return `El número ${num} es par.`;
+    } else {
+        return `El número ${num} es impar.`;
+    }
+};
+let num = parseInt(prompt("Ingrese un número:"));
+if (!isNaN(num)) {
+    alert(verificarParidad(num));
+} else {
+    alert("Por favor, ingrese un número válido.");
+}
+
+
+//ejercicio 15//
+/*Crea un programa que solicite un número y verifique si es positivo, negativo
+o igual a cero.*/
+
+const verificarNumero = (numero) => {
+    if (numero > 0) {
+        return `El número ${numero} es positivo.`;
+    } else if (numero < 0) {
+        return `El número ${numero} es negativo.`;
+    } else {
+        return `El número es cero.`;
+    }
+};
+let numero = parseFloat(prompt("Ingrese un número:"));
+if (!isNaN(numero)) {
+    alert(verificarNumero(numero));
+} else {
+    alert("Por favor, ingrese un número válido.");
+}
+
+//ejercicio 17//
+/*Escribe un programa que permita al usuario seleccionar una figura
+geométrica (triángulo y cuadrado) y luego calcule el área de esa figura
+ingresando los datos necesarios para cada caso.*/
+
+const calcularArea = () => {
+    let figura = prompt("Elige una figura geométrica: triángulo o cuadrado").toLowerCase();
+    
+    if (figura === "triángulo") {
+        let base = parseFloat(prompt("Ingresa la base del triángulo:"));
+        let altura = parseFloat(prompt("Ingresa la altura del triángulo:"));
+        
+        if (base > 0 && altura > 0) {
+            let area = (base * altura) / 2;
+            alert(`El área del triángulo es: ${area}`);
+        } else {
+            alert("Por favor, ingresa valores válidos.");
+        }
+    } else if (figura === "cuadrado") {
+        let lado = parseFloat(prompt("Ingresa el lado del cuadrado:"));
+        
+        if (lado > 0) {
+            let area = lado * lado;
+            alert(`El área del cuadrado es: ${area}`);
+        } else {
+            alert("Por favor, ingresa un valor válido.");
+        }
+    } else {
+        alert("Figura no reconocida. Por favor, elige triángulo o cuadrado.");
+    }
+};
+calcularArea();
+
+
+//ejercicio 19//
+/*Diseña un programa que solicite el nombre de un usuario y su contraseña. Si
+el nombre es "admin" y la contraseña es "12345", muestra un mensaje de
+acceso concedido; de lo contrario, muestra un mensaje de acceso denegado.*/
+
+const verificarAcceso = () => {
+    let usuario = prompt("Ingrese su nombre de usuario:");
+    let contrasena = prompt("Ingrese su contraseña:");
+    
+    if (usuario === "admin" && contrasena === "12345") {
+        alert("Acceso concedido");
+    } else {
+        alert("Acceso denegado");
+    }
+};
+
+verificarAcceso();
+
+
+
+
+
 
 
 
